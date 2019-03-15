@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Casino Xeon </title>
+
+
+
+
+</head>
+
+<body onload="play()";>
+
+<form style="text-align:center">
+  Bet amount:<br>
+  <input type="number" name="bet"><br>
+  <input type="submit" value="Submit" onclick="Show") > <br>
+  </form>
+  
+  
+
+<p id="ShowBet"></p>
+
+
+<div style="text-align:center">
+<p> Choose side: </p>
+<button id="He" onclick="Head()"> Heads </button>
+
+<button id="Te" onclick="Tails()"> Tails </button>
+</div>
+
+<div id="images">
+<img class="redir" border="0" src="Flip2.png" id="Flip1" width="50" height="50">
+</div>
+
+</body>
+
+
+
+
+
+
+
+<script>
+function play()
+{
+x=setInterval("SpinCoin()",100);
+}
+
+var i=1;
+var x;
+function SpinCoin()
+{
+
+x=document.getElementById("Flip1");
+x.src="Flip"+i+".png";
+i++;
+if(i==9)
+i=1;
+}
+
+
+function Tails()
+{
+var num = Math.floor(Math.random() * (3 - 1)) + 1 ;
+	switch(num)
+	{
+	case 1:
+		alert("Sorry, you've lost, try again")
+		break;
+	case 2:
+		alert("Congradulations, you've won");
+		break;
+	}
+
+}
+
+function Head()
+{
+	var num = Math.floor(Math.random() * (3 - 1)) + 1 ;
+	switch(num)
+	{
+	case 1:
+		alert("Congradulations, you've won");
+		break;
+	case 2:
+		alert("Sorry, you've lost, try again");
+		break;
+	}
+}
+
+
+</script>
