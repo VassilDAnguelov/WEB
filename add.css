@@ -2,6 +2,8 @@
     display: inline-block;
     margin-left: auto;
     margin-right: auto;
+    height: 300px; 
+
 }
 #images{
    text-align:center;
