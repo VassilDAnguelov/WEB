@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Casino Xeon </title>
+<link rel="stylesheet" type="text/css" href="add.css">
+
+
+
+
+</head>
+
+<body id="bgc" onload="play()">
+
+<div id="images">
+<a href="MainPage.html"> <img class="redir" border="0" src="Home.png">  </a>
+<a href="roulette.html"> <img class="redir" border="0" src="Roulette.jpg">  </a>
+</div>
+
+<form style="text-align:center">
+  Bet amount:<br>
+  <input type="number" name="bet"><br>
+  <input type="submit" value="Submit" onclick="Show" > <br>
+  </form>
+  
+ 
+
+<div style="text-align:center">
+<p> Choose side: </p>
+<button id="He" onclick="Head()"> Heads </button>
+
+<button id="Te" onclick="Tails()"> Tails </button>
+</div>
+
+<div style="text-align:center">
+<img id="flip" src="coinf.png" width="100" height="100">
+</div>
+
+<div style="text-align:center">
+<img src="Flip1.png" id="Flip1" >
+</div>
+
+
+<script>
+
+var i=2;
+var x;
+
+function play()
+{
+x=setInterval("SpinCoin()",100);
+}
+
+
+
+function SpinCoin()
+{
+
+x=document.getElementById("Flip1");
+x.src="Flip"+i+".png";
+i++;
+if(i==9)
+i=1;
+}
+
+var z;
+function Tails()
+{
+var num = Math.floor(Math.random() * (3 - 1)) + 1 ;
+	switch(num)
+	{
+	case 1:
+		alert("Sorry, you've lost, try again")
+			z=document.getElementById("flip");
+	z.src="heads.png";
+		break;
+	case 2:
+		alert("Congradulations, you've won");
+			z=document.getElementById("flip");
+	z.src="tails.png";
+		break;
+	}
+
+
+}
+
+function Head()
+{
+	var num = Math.floor(Math.random() * (3 - 1)) + 1 ;
+	switch(num)
+	{
+	case 1:
+		alert("Congradulations, you've won");
+			z=document.getElementById("flip");
+	z.src="heads.png";
+		break;
+	case 2:
+		alert("Sorry, you've lost, try again");
+			z=document.getElementById("flip");
+	z.src="tails.png";
+		break;
+	}
+}
+
+
+</script>
+
+</body>
+</html>

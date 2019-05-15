@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<head>
+<title> Casino Xeon </title>
+<link rel="stylesheet" type="text/css" href="add.css">
+</head>
+
+<body id="bgr">
+
+<div id="images">
+<a href="MainPage.html"> <img class="redir" border="0" src="Home.png">  </a>
+<a href="coinflip.html"> <img class="redir" border="0" src="coinflip.png">  </a>
+</div>
+
+<form style="text-align:center">
+  Bet amount:<br>
+  <input type="number" name="bet"><br>
+  <input type="submit" value="Submit" onclick="Show" > <br>
+  
+  </form>
+  
+  <div style="text-align:center">
+<p style="color:White"> Bet on: </p>
+<button style="background-color:red;color:white" id="Red" onclick="Red()"> Red </button>
+
+<button style="background-color:black;color:white" id="Black" onclick="Black()"> Black </button>
+
+<button style="background-color:green;color:white" id="Green" onclick="Green()"> Green </button>
+
+</div>
+ 
+ <div style="text-align:center">
+ <img src="R0.png" id="R0" width="70" height="70" style="text-align:center">
+</div>
+
+
+
+<script>
+var i=0;
+
+function RouletteSpin()
+{
+
+x=document.getElementById("R0");
+x.src="R"+i+".png";
+
+}
+
+
+
+
+
+function Black()
+{
+var num = Math.floor(Math.random() * 17);
+	i=num;
+	RouletteSpin();
+
+	if(num == 3 || num == 5 || num == 7 || num == 9 || num == 11 || num == 13 || num == 15 || num == 17)
+	{
+	alert("Congradulations, you've won");
+	}
+	
+	else  alert("Sorry, you've lost, try again");
+
+}
+
+function Red()
+{
+
+var num = Math.floor(Math.random() * 17);
+	i=num;
+		RouletteSpin();
+
+	if(num == 2 || num == 4 || num == 6 || num == 8 || num == 10 || num == 12 || num == 14 || num == 16)
+	{	
+		alert("Congradulations, you've won");
+	}
+		else alert("Sorry, you've lost, try again");
+
+}
+
+function Green()
+{
+
+var num = Math.floor(Math.random() * 17);
+	i=num;
+		RouletteSpin();
+
+	if(num == 1)
+	{
+		
+		alert("Congradulations, you've won");
+	}
+		else alert("Sorry, you've lost, try again");
+
+}
+
+</script>
+
+
+</body>
+</html>
